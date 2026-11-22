@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday sweetheart 💗</title>
+<title>Happy Birthday Sweetheart 💗</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
@@ -13,7 +13,6 @@
   --pink: #ff8fab;
   --soft: #ffe5ec;
   --dark: #a83d62;
-  --white: #fffafb;
 }
 
 * {
@@ -119,6 +118,8 @@ h2 {
   background: #d84e7c;
 }
 
+/* FLOATING HEARTS */
+
 .floating-heart {
   position: fixed;
   bottom: -30px;
@@ -134,7 +135,7 @@ h2 {
   }
 }
 
-/* COUNTDOWN */
+/* DATE */
 
 .countdown-section {
   background: #fffafb;
@@ -159,7 +160,7 @@ h2 {
 .time-box strong {
   display: block;
   font-family: 'Playfair Display';
-  font-size: 2.3rem;
+  font-size: 2rem;
   color: #d94e7d;
 }
 
@@ -245,7 +246,7 @@ h2 {
 
 .quiz-card h3 {
   font-size: 1.5rem;
-  margin-bottom: 25px;
+  margin: 25px 0;
 }
 
 .answers {
@@ -267,6 +268,11 @@ h2 {
   transform: scale(1.02);
 }
 
+.answer:disabled {
+  opacity: .6;
+  cursor: default;
+}
+
 #feedback {
   margin-top: 20px;
   min-height: 25px;
@@ -285,7 +291,6 @@ h2 {
   padding: 35px 25px;
   border-radius: 20px;
   box-shadow: 0 15px 40px #a34c6d25;
-  transition: .5s;
 }
 
 .letter {
@@ -309,14 +314,14 @@ h2 {
   color: #d34e79;
 }
 
+.letter p { margin-bottom: 15px; }
+
 .signature {
   text-align: right;
   margin-top: 25px;
   font-family: 'Playfair Display';
   font-style: italic;
 }
-
-/* FOOTER */
 
 footer {
   background: #d95e85;
@@ -329,8 +334,7 @@ footer {
 .hidden { display: none !important; }
 
 @media(max-width: 480px) {
-  .time-box { width: 75px; }
-  .time-box strong { font-size: 1.8rem; }
+  .time-box { width: 85px; }
   section { padding: 65px 15px; }
 }
 </style>
@@ -350,31 +354,29 @@ footer {
   </div>
 </section>
 
-<!-- COUNTDOWN -->
+<!-- BIRTHDAY DATE -->
 <section class="countdown-section" id="countdown">
   <h2>Counting Your Special Day 🎂</h2>
-  <p class="subtitle">Every second brings us closer to your special day.</p>
+  <p class="subtitle">A special date to remember forever. 💗</p>
 
   <div class="countdown">
     <div class="time-box">
-      <strong id="days">00</strong>
-      <span>DAYS</span>
+      <strong id="date">23</strong>
+      <span>DATE</span>
     </div>
     <div class="time-box">
-      <strong id="hours">00</strong>
-      <span>HOURS</span>
+      <strong id="month">NOV</strong>
+      <span>MONTH</span>
     </div>
     <div class="time-box">
-      <strong id="minutes">00</strong>
-      <span>MINUTES</span>
-    </div>
-    <div class="time-box">
-      <strong id="seconds">00</strong>
-      <span>SECONDS</span>
+      <strong id="year">2026</strong>
+      <span>YEAR</span>
     </div>
   </div>
 
-  <p id="countdown-message" style="margin-top:25px"></p>
+  <p style="margin-top:25px">
+    🎀 November 23, 2026 — Your Special Day! 💗
+  </p>
 </section>
 
 <!-- GALLERY -->
@@ -383,6 +385,9 @@ footer {
   <p class="subtitle">A little collection of beautiful moments.</p>
 
   <div class="gallery">
+
+    <!-- GANTI FOTO DENGAN FOTO KALIAN -->
+    <!-- Contoh: src="foto1.jpg" -->
 
     <div class="photo" onclick="openPhoto(this)">
       <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=600" alt="Kenangan satu">
@@ -407,6 +412,7 @@ footer {
   </div>
 </section>
 
+<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closePhoto()">
   <img id="lightbox-img" src="" alt="Foto kenangan">
 </div>
@@ -419,14 +425,12 @@ footer {
   <div class="quiz-card">
     <p id="question-number">Question 1 of 3</p>
     <h3 id="question">Siapa orang paling spesial hari ini?</h3>
-
     <div class="answers" id="answers"></div>
-
     <p id="feedback"></p>
   </div>
 </section>
 
-<!-- LETTER -->
+<!-- LOVE LETTER -->
 <section class="letter-section">
   <h2>A Letter For You 💌</h2>
   <p class="subtitle">There's something I want you to read...</p>
@@ -436,16 +440,16 @@ footer {
     <div id="locked">
       <div style="font-size:65px">💌</div>
       <h3 style="margin:15px 0">A Secret Letter</h3>
-      <p style="margin-bottom:20px">Selesaikan kuis terlebih dahulu untuk membuka surat ini.</p>
+      <p style="margin-bottom:20px">
+        Selesaikan kuis terlebih dahulu untuk membuka surat ini.
+      </p>
       <button class="btn" disabled style="opacity:.5">Locked ♡</button>
     </div>
 
     <div class="letter" id="letter">
       <h3>Dear You, ♡</h3>
 
-      <p>
-        Happy Birthday, seseorang yang sangat istimewa! 💗
-      </p>
+      <p>Happy Birthday, seseorang yang sangat istimewa! 💗</p>
 
       <p>
         Di hari yang spesial ini, aku ingin kamu tahu bahwa
@@ -493,58 +497,40 @@ footer {
 
 <script>
 
-/* =================================
-   PENGATURAN WEBSITE
-================================= */
+/* BIRTHDAY DATE */
 
-// Ganti tanggal ulang tahun di sini.
-// Format: TAHUN-BULAN-TANGGAL T00:00:00
-// Contoh: 2026-12-25T00:00:00
+const BIRTHDAY_DATE = "2026-11-23";
 
-const BIRTHDAY_DATE = "2026-12-25T00:00:00";
+function showBirthdayDate() {
+  const date = new Date(BIRTHDAY_DATE + "T00:00:00");
 
-/* =================================
-   COUNTDOWN
-================================= */
+  const months = [
+    "JAN", "FEB", "MAR", "APR",
+    "MAY", "JUN", "JUL", "AUG",
+    "SEP", "OCT", "NOV", "DEC"
+  ];
 
-function updateCountdown() {
-  const target = new Date(BIRTHDAY_DATE).getTime();
-  const now = Date.now();
-  const distance = target - now;
+  document.getElementById("date").textContent =
+    String(date.getDate()).padStart(2, "0");
 
-  if (distance <= 0) {
-    ["days", "hours", "minutes", "seconds"].forEach(id => {
-      document.getElementById(id).textContent = "00";
-    });
+  document.getElementById("month").textContent =
+    months[date.getMonth()];
 
-    document.getElementById("countdown-message").textContent =
-      "🎉 HAPPY BIRTHDAY! THIS IS YOUR SPECIAL DAY! 💗";
-
-    return;
-  }
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((distance / (1000 * 60)) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
-
-  document.getElementById("days").textContent = days;
-  document.getElementById("hours").textContent = hours;
-  document.getElementById("minutes").textContent = minutes;
-  document.getElementById("seconds").textContent = seconds;
+  document.getElementById("year").textContent =
+    date.getFullYear();
 }
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+showBirthdayDate();
 
-/* =================================
-   FLOATING HEARTS
-================================= */
+/* FLOATING HEARTS */
 
 function createHeart() {
   const heart = document.createElement("div");
+
   heart.className = "floating-heart";
-  heart.textContent = ["♡", "💗", "💕", "🌸"][Math.floor(Math.random() * 4)];
+  heart.textContent = ["♡", "💗", "💕", "🌸"][
+    Math.floor(Math.random() * 4)
+  ];
 
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.fontSize = (15 + Math.random() * 20) + "px";
@@ -557,9 +543,7 @@ function createHeart() {
 
 setInterval(createHeart, 700);
 
-/* =================================
-   PHOTO GALLERY
-================================= */
+/* PHOTO GALLERY */
 
 function openPhoto(element) {
   const img = element.querySelector("img");
@@ -572,9 +556,7 @@ function closePhoto() {
   document.getElementById("lightbox").classList.remove("active");
 }
 
-/* =================================
-   BIRTHDAY QUIZ
-================================= */
+/* BIRTHDAY QUIZ */
 
 const questions = [
   {
@@ -584,12 +566,20 @@ const questions = [
   },
   {
     question: "Apa hadiah terbaik untuk hari ini?",
-    answers: ["Tidur seharian", "Kebahagiaan dan cinta 💕", "PR matematika"],
+    answers: [
+      "Tidur seharian",
+      "Kebahagiaan dan cinta 💕",
+      "PR matematika"
+    ],
     correct: 1
   },
   {
     question: "Apa harapan terbaik untuk tahun ini?",
-    answers: ["Banyak kebahagiaan! 🌸", "Banyak masalah", "Tidak ada liburan"],
+    answers: [
+      "Banyak kebahagiaan! 🌸",
+      "Banyak masalah",
+      "Tidak ada liburan"
+    ],
     correct: 0
   }
 ];
@@ -604,7 +594,6 @@ function showQuestion() {
     `Question ${currentQuestion + 1} of ${questions.length}`;
 
   document.getElementById("question").textContent = q.question;
-
   document.getElementById("feedback").textContent = "";
 
   const container = document.getElementById("answers");
@@ -635,8 +624,9 @@ function checkAnswer(index) {
 
   feedback.textContent = "Yeay! Jawaban kamu benar! 🎉";
 
-  const buttons = document.querySelectorAll(".answer");
-  buttons.forEach(button => button.disabled = true);
+  document.querySelectorAll(".answer").forEach(button => {
+    button.disabled = true;
+  });
 
   setTimeout(() => {
     currentQuestion++;
@@ -669,9 +659,7 @@ function finishQuiz() {
     "A little surprise is waiting for you...";
 }
 
-/* =================================
-   OPEN LOVE LETTER
-================================= */
+/* OPEN LOVE LETTER */
 
 function unlockLetter() {
   document.getElementById("locked").classList.add("hidden");
@@ -685,12 +673,13 @@ function unlockLetter() {
   confetti();
 }
 
-/* =================================
-   CONFETTI
-================================= */
+/* CONFETTI */
 
 function confetti() {
-  const colors = ["#ff8fab", "#ffc2d1", "#ffffff", "#e76f96", "#ffd166"];
+  const colors = [
+    "#ff8fab", "#ffc2d1", "#ffffff",
+    "#e76f96", "#ffd166"
+  ];
 
   for (let i = 0; i < 100; i++) {
     const piece = document.createElement("div");
@@ -700,7 +689,10 @@ function confetti() {
     piece.style.left = Math.random() * 100 + "vw";
     piece.style.width = "9px";
     piece.style.height = "12px";
-    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+    piece.style.background =
+      colors[Math.floor(Math.random() * colors.length)];
+
     piece.style.zIndex = "100";
     piece.style.pointerEvents = "none";
     piece.style.borderRadius = "3px";
@@ -710,7 +702,10 @@ function confetti() {
     const duration = 2000 + Math.random() * 3000;
 
     const animation = piece.animate([
-      { transform: "translateY(0) rotate(0deg)", opacity: 1 },
+      {
+        transform: "translateY(0) rotate(0deg)",
+        opacity: 1
+      },
       {
         transform: `translate(${Math.random() * 200 - 100}px, 110vh) rotate(${Math.random() * 900}deg)`,
         opacity: 0
@@ -725,11 +720,10 @@ function confetti() {
 }
 
 /* START QUIZ */
+
 showQuestion();
 
 </script>
 
 </body>
 </html>
-
-
